@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vinh Sock Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app" class="product-box">
+
+    <div class="product-image">
+      <img :src="productImage" :alt="productName" />
+    </div>
+
+    <div class="product-info">
+      <h1>{{ productName }}</h1>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    const mountedApp = app.mount('#app');
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vinh Sock Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="nav-bar"></div>
+
+    <div class="product-display">
+      <div class="product-container">
+        <div class="product-image">
+          <img v-bind:src="sockImage" alt="Product image">
+        </div>
+        <div class="product-info">
+          <h1>{{ productName }}</h1>
+          <p><a :href="externalLink" target="_blank">More about this product</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    const mountedApp = app.mount('#app');
+  </script>
+</body>
+</html>
