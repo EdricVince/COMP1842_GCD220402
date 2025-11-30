@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Shop - Socks</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+
+      <product-display
+        :premium="premium"
+        :cart-count="cart.length"
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeFromCart">
+      </product-display>
+
+      <div class="cart-wrapper">
+        <button class="button" @click="toggleReviews">
+          {{ showReviews ? 'Hide Reviews' : 'Show Reviews' }}
+        </button>
+      </div>
+
+      <review-box
+        v-if="showReviews"
+        :reviews="reviews"
+        @review-submitted="addReview">
+      </review-box>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="components/ReviewBox.js"></script>
+    <script src="components/ProductDisplay.js"></script>
+    <script>
+      app.mount('#app')
+    </script>
+  </body>
+</html>
